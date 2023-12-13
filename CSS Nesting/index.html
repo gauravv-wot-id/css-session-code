@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Nesting</title>
+    <link rel="stylesheet" href="../styles-global.css" />
+    <style>
+      .listing-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        padding-top: 40px;
+
+        /* NESTED MEDIA QUERIES */
+        @media (max-width: 1440px) {
+          & {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* NESTED MEDIA QUERIES */
+        @media (max-width: 1080px) {
+          & {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+      }
+      .single-listing-item__heading {
+        /* Directly selecting the child elements */
+        h2 {
+          font-size: 26px;
+        }
+      }
+
+      /* ONE METHOD TO DO NESTING */
+      .single-listing-item__content {
+        padding-top: 20px;
+
+        & p {
+          font-weight: 300;
+          font-size: 18px;
+          line-height: 1.5;
+        }
+      }
+      .single-listing-item__description {
+        padding-top: 8px;
+      }
+      .single-listing-item__icon {
+        width: 50%;
+      }
+      .single-listing-item__icon p {
+        font-size: 40px;
+      }
+      .single-listing-item {
+        background-color: #161616c2;
+        padding: 20px;
+        border-radius: 12px;
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 0%;
+          background-color: #f1d4e5;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all 0.3s ease-in;
+        }
+
+        &:hover:after {
+          height: 100%;
+        }
+      }
+
+      /* APPENDING NESTED SELECTORS */
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25rem;
+        font-family: system-ui;
+      }
+      .card {
+        padding: 0.5rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        & h2 {
+          /* equivalent to `.card h2` */
+          color: slateblue;
+          .featured & {
+            /* equivalent to `.featured.card h2` */
+            color: tomato;
+          }
+        }
+      }
+
+      .single-listing-item__heading {
+        & h2 {
+          text-decoration: underline;
+
+          .red__text & {
+            color: tomato;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main-section">
+      <div class="section-title">
+        <h1>CSS NESTING DEMO</h1>
+      </div>
+      <!-- LISTING GRID -->
+      <div class="listing-container">
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌿🏡</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading">
+              <h2>Landscaping Consultation Service</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                Our expert horticulturists and landscape designers will work
+                with you to create a personalized and beautiful outdoor space.
+                Whether you're starting from scratch or looking to enhance your
+                existing garden, our team will provide professional guidance and
+                design solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌱📚</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading red__text">
+              <h2>Plant Care Workshops</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                oin our hands-on workshops to learn essential plant care
+                techniques. From proper watering and pruning to understanding
+                soil composition, these sessions are perfect for both beginners
+                and seasoned gardeners. Boost your plant knowledge and ensure
+                the health and vitality of your green companions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌺✨</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading">
+              <h2>Custom Plant Arrangements</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                Elevate your indoor and outdoor spaces with custom plant
+                arrangements tailored to your style and preferences. Our skilled
+                team will help you select the perfect combination of plants,
+                containers, and accessories to create stunning, one-of-a-kind
+                arrangements for any occasion.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌻📅</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading">
+              <h2>Seasonal Plant Subscriptions</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                Enjoy a constant infusion of greenery throughout the year with
+                our seasonal plant subscription service. Receive carefully
+                curated plant selections delivered right to your doorstep. Each
+                subscription includes a variety of plants that thrive in
+                different seasons, ensuring a continuously vibrant and changing
+                landscape.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌿🔍</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading">
+              <h2>Plant Health Checkups and Pest Control</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                Keep your plants thriving with our comprehensive health checkup
+                and pest control services. Our team will assess the overall
+                well-being of your plants, identify potential issues, and
+                implement effective pest control measures. Ensure the longevity
+                and vitality of your green companions with regular checkups.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="single-listing-item">
+          <div class="single-listing-item__icon">
+            <p>🌱🏠</p>
+          </div>
+          <div class="single-listing-item__content">
+            <div class="single-listing-item__heading">
+              <h2>Plant Adoption Program</h2>
+            </div>
+            <div class="single-listing-item__description">
+              <p>
+                Embrace the joy of nurturing and caring for plants without the
+                long-term commitment. Our plant adoption program allows you to
+                foster a variety of plants on a rotating basis. Experience the
+                unique characteristics of different plants and discover your
+                favorites before making a permanent decision to purchase.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-section">
+      <div class="wrapper">
+        <article class="card">
+          <h2>Card 1</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="card featured">
+          <h2>Card 2</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="card">
+          <h2>Card 3</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

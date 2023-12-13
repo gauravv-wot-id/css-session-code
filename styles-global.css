@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* >>> COMMON RESET <<< */
+* {
+  /* outline: 1px solid red; */
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  background-color: #080202;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+p {
+  line-height: 1.4;
+  font-weight: 200;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ======== */
+.main-section {
+  padding: 70px 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+
+  & h1 {
+    font-size: 60px;
+    text-transform: uppercase;
+  }
+}
