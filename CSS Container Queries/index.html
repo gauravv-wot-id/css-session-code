@@ -25,6 +25,7 @@
       }
       .card-image img {
         width: 240px;
+        height: 240px;
         aspect-ratio: 2 / 3;
         object-fit: cover;
         border-radius: 12px;
@@ -39,13 +40,17 @@
         container-type: inline-size;
       }
 
-      .main-section {
+      .content-wrapper {
         display: flex;
         gap: 30px;
       }
 
       .main-content-section {
         width: 70%;
+      }
+
+      .content-wrapper {
+        padding: 60px 0;
       }
 
       .aside-section {
@@ -70,92 +75,94 @@
     </style>
   </head>
   <body>
-    <div class="section-title">
-      <h1>CONTAINER QUERIES DEMO</h1>
-    </div>
     <section class="main-section">
-      <!-- Large Width Container -->
-      <div class="main-content-section">
-        <div class="post">
-          <div class="card-outer">
-            <div class="card-image">
-              <img src="demo.jpg" alt="" />
-            </div>
-            <div class="card-content">
-              <h2>Boruto Uzumaki</h2>
-              <p>
-                Boruto Uzumaki is a shinobi from Konohagakure's Uzumaki Clan and
-                a direct descendant of the Hyūga clan through his mother.
-                Initially nonchalant in his duties as a member of Team 7 and
-                resentful of his father and the office of Hokage because it left
-                him with no time for his family; Boruto eventually comes to
-                respect and reconcile with his father and his role as Hokage,
-                yet vows to become like his mentor Sasuke Uchiha — a support
-                system for the Hokage and the village.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="post">
-          <div class="card-outer">
-            <div class="card-image">
-              <img src="demo1.webp" alt="" />
-            </div>
-            <div class="card-content">
-              <h2>Kawaki</h2>
-              <p>
-                Due to years of abuse at the hands of his birth father and Kara,
-                Kawaki is initially hostile to new people he meets. He is very
-                disrespectful, constantly using expletives and speaking to
-                people in a rude tone. He's also very blunt and straight to the
-                point. Due to Jigen's emotional abuse, Kawaki has come to view
-                himself as empty, but after meeting Naruto, overcomes that
-                outlook. Kawaki can also be very stubborn at times not to
-                mention his rudeness habit makes people that try to talk to him
-                very annoyed.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="post">
-          <div class="card-outer">
-            <div class="card-image">
-              <img src="demo2.webp" alt="" />
-            </div>
-            <div class="card-content">
-              <h2>Momoshiki Ōtsutsuki</h2>
-              <p>
-                Momoshiki Ōtsutsuki (大筒木モモシキ, Ōtsutsuki Momoshiki) was a
-                member of the Ōtsutsuki clan's main family, sent to investigate
-                the whereabouts of Kaguya and her God Tree and then attempting
-                to cultivate a new one out of the chakra of the Seventh Hokage.
-                In the process of being killed by Boruto Uzumaki, Momoshiki
-                placed a Kāma on him, allowing his spirit to remain intact
-                through the mark.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div class="section-title">
+        <h1>CONTAINER QUERIES DEMO</h1>
       </div>
-      <!-- Small Width Container -->
-      <div class="aside-section">
-        <div class="post">
-          <div class="card-outer">
-            <div class="card-image">
-              <img src="demo.jpg" alt="" />
+      <div class="content-wrapper">
+        <!-- Large Width Container -->
+        <div class="main-content-section">
+          <div class="post">
+            <div class="card-outer">
+              <div class="card-image">
+                <img src="demo.jpg" alt="" />
+              </div>
+              <div class="card-content">
+                <h2>Boruto Uzumaki</h2>
+                <p>
+                  Boruto Uzumaki is a shinobi from Konohagakure's Uzumaki Clan
+                  and a direct descendant of the Hyūga clan through his mother.
+                  Initially nonchalant in his duties as a member of Team 7 and
+                  resentful of his father and the office of Hokage because it
+                  left him with no time for his family; Boruto eventually comes
+                  to respect and reconcile with his father and his role as
+                  Hokage, yet vows to become like his mentor Sasuke Uchiha — a
+                  support system for the Hokage and the village.
+                </p>
+              </div>
             </div>
-            <div class="card-content">
-              <h2>Boruto Uzumaki</h2>
-              <p>
-                Boruto Uzumaki is a shinobi from Konohagakure's Uzumaki Clan and
-                a direct descendant of the Hyūga clan through his mother.
-                Initially nonchalant in his duties as a member of Team 7 and
-                resentful of his father and the office of Hokage because it left
-                him with no time for his family; Boruto eventually comes to
-                respect and reconcile with his father and his role as Hokage,
-                yet vows to become like his mentor Sasuke Uchiha — a support
-                system for the Hokage and the village.
-              </p>
+          </div>
+          <div class="post">
+            <div class="card-outer">
+              <div class="card-image">
+                <img src="demo1.webp" alt="" />
+              </div>
+              <div class="card-content">
+                <h2>Kawaki</h2>
+                <p>
+                  Due to years of abuse at the hands of his birth father and
+                  Kara, Kawaki is initially hostile to new people he meets. He
+                  is very disrespectful, constantly using expletives and
+                  speaking to people in a rude tone. He's also very blunt and
+                  straight to the point. Due to Jigen's emotional abuse, Kawaki
+                  has come to view himself as empty, but after meeting Naruto,
+                  overcomes that outlook. Kawaki can also be very stubborn at
+                  times not to mention his rudeness habit makes people that try
+                  to talk to him very annoyed.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="post">
+            <div class="card-outer">
+              <div class="card-image">
+                <img src="demo2.webp" alt="" />
+              </div>
+              <div class="card-content">
+                <h2>Momoshiki Ōtsutsuki</h2>
+                <p>
+                  Momoshiki Ōtsutsuki (大筒木モモシキ, Ōtsutsuki Momoshiki) was
+                  a member of the Ōtsutsuki clan's main family, sent to
+                  investigate the whereabouts of Kaguya and her God Tree and
+                  then attempting to cultivate a new one out of the chakra of
+                  the Seventh Hokage. In the process of being killed by Boruto
+                  Uzumaki, Momoshiki placed a Kāma on him, allowing his spirit
+                  to remain intact through the mark.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Small Width Container -->
+        <div class="aside-section">
+          <div class="post">
+            <div class="card-outer">
+              <div class="card-image">
+                <img src="demo.jpg" alt="" />
+              </div>
+              <div class="card-content">
+                <h2>Boruto Uzumaki</h2>
+                <p>
+                  Boruto Uzumaki is a shinobi from Konohagakure's Uzumaki Clan
+                  and a direct descendant of the Hyūga clan through his mother.
+                  Initially nonchalant in his duties as a member of Team 7 and
+                  resentful of his father and the office of Hokage because it
+                  left him with no time for his family; Boruto eventually comes
+                  to respect and reconcile with his father and his role as
+                  Hokage, yet vows to become like his mentor Sasuke Uchiha — a
+                  support system for the Hokage and the village.
+                </p>
+              </div>
             </div>
           </div>
         </div>

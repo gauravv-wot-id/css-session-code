@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:has Selector</title>
+    <link rel="stylesheet" href="../styles-global.css" />
+    <style>
+      .content-wrapper {
+        padding-top: 35px;
+      }
+      .para-main {
+        width: 65%;
+        margin: 0 auto;
+      }
+      .para-main:not(:first-child) {
+        padding-top: 18px;
+      }
+      .para-main p {
+        font-size: 25px;
+        text-align: center;
+      }
+      .text-red:has(p) {
+        color: tomato;
+      }
+      .para-main:has(p.bold-p) {
+        color: palevioletred;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main-section">
+      <div class="section-title">
+        <h1>:has Selector Demo</h1>
+      </div>
+      <div class="content-wrapper">
+        <div class="para-main text-red">
+          <p>
+            Boruto: Naruto Next Generations is a manga series serialized in
+            V-Jump, created by Masashi Kishimoto and illustrated by Mikio
+            Ikemoto. It serves as a sequel to Masashi Kishimoto's Naruto
+            (1999-2014).
+          </p>
+        </div>
+        <div class="para-main">
+          <p>
+            The ninja adventures continue with Naruto`s son, Boruto! Naruto was
+            a young shinobi with an incorrigible knack for mischief. He achieved
+            his dream to become the greatest ninja in his village, and now his
+            face sits atop the Hokage monument. But this is not his story... A
+            new generation of ninja is ready to take the stage, led by Naruto's
+            own son, Boruto!
+          </p>
+        </div>
+        <div class="para-main">
+          <p class="bold-p">
+            Boruto: Naruto Next Generations is a manga series serialized in
+            V-Jump, created by Masashi Kishimoto and illustrated by Mikio
+            Ikemoto. It serves as a sequel to Masashi Kishimoto's Naruto
+            (1999-2014).
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
